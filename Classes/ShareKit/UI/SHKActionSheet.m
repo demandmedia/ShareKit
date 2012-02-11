@@ -103,8 +103,14 @@
 		{
 			doShare = [shareDelegate aboutToShareItem:item withSharer:sharer];
 		}
-		if(doShare)
-			[sharer share];
+        if (doShare)
+        {
+            [sharer share];
+            if (shareDelegate != nil && [shareDelegate respondsToSelector:@selector(didShareItem:withSharer:)])
+            {
+                [shareDelegate didShareItem:item withSharer:sharer];
+            }
+        }
 	}
 	
 	// More

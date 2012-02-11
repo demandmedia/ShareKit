@@ -42,4 +42,7 @@
  to handle it. This is useful if generating the image at the appropriate size for
  the service is an async process.*/
 -(BOOL) aboutToShareItem:(SHKItem*)item withSharer:(SHKSharer*)sharer;
+
+-(void) didShareItem:(SHKItem*)item withSharer:(SHKSharer*)sharer;
+
 @end
